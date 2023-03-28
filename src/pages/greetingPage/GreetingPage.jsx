@@ -28,19 +28,21 @@ export const GreetingPage = () => {
 
   return (
     <div className="welcomePage" style={{ marginLeft: '88px', width: 'calc(100vw - 88px)' }}>
-      <section className="welcomeContent" id="sectionWelcome" >
-        <div className="divHead">
-          <img src={ logoSANF2 } alt="Logo-SENA-SANF" className="logoWelcome" /> SENA - SANF
-        </div>
-        <div className="divMain">
-          <h1>HOLA Y BIENVENIDO</h1>
-          <p>
-            Desde el grupo <b>SENA-SANF</b> le damos una calurosa bienvenida a nuestra aplicacion web
-            en donde podra de una manera eficaz, ordenada y sensilla, organizar, ver, editar y administrar
-            el manejo de horarios. <br /><br /> Esta aplicacion va dirigida a Instructores, Funcionarios y Administradores
-            <b> SENA</b> del Centro de Materiales y Ensayos del Complejo Sur situado en la ciudad de Bogotá D.C.
-          </p>
-        </div>
+      <section className="background">
+        <section className="welcomeContent" id="sectionWelcome" >
+          <div className="divHead">
+            <img src={ logoSANF2 } alt="Logo-SENA-SANF" className="logoWelcome" /> SENA - SANF
+          </div>
+          <div className="divMain">
+            <h1>HOLA Y BIENVENIDO</h1>
+            <p>
+              Desde el grupo <b>SENA-SANF</b> le damos una calurosa bienvenida a nuestra aplicacion web
+              en donde podra de una manera eficaz, ordenada y sensilla, organizar, ver, editar y administrar
+              el manejo de horarios. <br /><br /> Esta aplicacion va dirigida a Instructores, Funcionarios y Administradores
+              <b> SENA</b> del Centro de Materiales y Ensayos del Complejo Sur situado en la ciudad de Bogotá D.C.
+            </p>
+          </div>
+        </section>
       </section>
     </div>
   )

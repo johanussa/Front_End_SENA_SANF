@@ -19,14 +19,14 @@ function WelcomeLoginPage() {
   const [formUser, setFormUser] = useState({ tipoDocumento: 'CEDULA_DE_CIUDADANIA' });
 
   useEffect(() => {
-    if (data) { 
+    if (data) {
       setToken(data.loginUser.token);
       Swal.fire('Autorizado!', `Bienvenido`, 'success');
       navigate('/greeting');
-    }  
+    }
     if (error) Swal.fire('Error!!!', `${error.message}`, 'error');
   }, [data, error]);
-  
+
   const expresiones = {
     numDoc: /^[a-zA-Z0-9]{8,16}$/,
     numDocRec: /^[a-zA-Z0-9]{8,16}$/,
@@ -43,7 +43,7 @@ function WelcomeLoginPage() {
   const handleFocusOut = e => {
     if (e.target.parentNode.id) {
       let id = e.target.parentNode.id;
-      if (e.target.form.id === 'form_get_pass') 
+      if (e.target.form.id === 'form_get_pass')
         return document.querySelector(`#${id} i`).style.color = 'black';
       return document.querySelector(`#${id} i`).style.color = 'white';
     }
@@ -72,9 +72,9 @@ function WelcomeLoginPage() {
     e.preventDefault();
     if (states.numDoc && states.pass) verifyUser({ variables: formUser });
     else if (e.target.id === 'form_get_pass') {
-      if (states.numDocRec) { 
+      if (states.numDocRec) {
         Swal.fire('Enviado!', `El correo de recuperación de contraseña ha sido enviado`, 'success');
-        document.getElementById('form_error_rec').style.display = 'none'; 
+        document.getElementById('form_error_rec').style.display = 'none';
         document.querySelector('.modal').classList.remove('modal_show');
         e.target.reset();
       }
@@ -130,9 +130,9 @@ function WelcomeLoginPage() {
     sectionLogin.style.display = 'grid';
     setTimeout(() => {
       sectionWelcome.style.display = 'none';
-      content.style.backgroundColor = 'rgba(0, 0, 0, .4)';
+      content.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
     }, 2000);
-  }  
+  }
   const closeModal = () => {
     document.querySelector('.modal').classList.remove('modal_show');
     document.getElementById('form_get_pass').reset();
@@ -140,184 +140,186 @@ function WelcomeLoginPage() {
 
   return (
     <div className="welcomePage">
-      <section className="welcomeContent" id="sectionWelcome">
-        <div className="divHead">
-          <img src={logoSANF2} alt="Logo-SENA-SANF" className="logoWelcome" /> SENA - SANF
-        </div>
-        <div className="divMain">
-          <h1>HOLA Y BIENVENIDO</h1>
-          <p>
-            Desde el grupo <b>SENA-SANF</b> le damos una calurosa bienvenida a nuestra aplicacion web
-            en donde podra de una manera eficaz, ordenada y sensilla, organizar, ver, editar y administrar
-            el manejo de horarios. <br /><br /> Esta aplicacion va dirigida a Instructores, Funcionarios y Administradores 
-            <b> SENA</b> del Centro de Materiales y Ensayos del Complejo Sur situado en la ciudad de Bogotá D.C.
-          </p>
-        </div>
-        <button className="btnWelcome" onClick={logingPage}>INGRESAR</button>
-      </section>
-
-      <section className="loginContent" id="sectionLogin">
-        <div className="register" id="register">
-          <div className="logo">
-            <img src={logoSANF2} alt="Logo-SENA-SANF" className="logoSanf" />
-            <span>SENA - SANF</span>
+      <section className="background">
+        <section className="welcomeContent" id="sectionWelcome">
+          <div className="divHead">
+            <img src={logoSANF2} alt="Logo-SENA-SANF" className="logoWelcome" /> SENA - SANF
           </div>
-          <div className="createCount">
-            <h2>¿ No Tienes una Cuenta ?</h2>
+          <div className="divMain">
+            <h1>HOLA Y BIENVENIDO</h1>
             <p>
-              Registrate para poder acceder a todos nuestros servicios, y administra y
-              visualiza los horarios en un solo lugar.
+              Desde el grupo <b>SENA-SANF</b> le damos una calurosa bienvenida a nuestra aplicación web
+              en donde podrá de una manera eficaz, ordenada y sencilla, organizar, ver, editar y administrar
+              el manejo de horarios. <br /><br /> Esta aplicación va dirigida a Instructores, Funcionarios y Administradores
+              <b> SENA</b> del Centro de Materiales y Ensayos del Complejo Sur situado en la ciudad de Bogotá D.C.
             </p>
-            <div className="divBtn">
-              <Link to={'/user-register'}><button>Registrate !! <i className="bi bi-caret-right-fill"></i></button></Link>
+          </div>
+          <button className="btnWelcome" onClick={logingPage}>INGRESAR</button>
+        </section>
+
+        <section className="loginContent" id="sectionLogin">
+          <div className="register" id="register">
+            <div className="logo">
+              <img src={logoSANF2} alt="Logo-SENA-SANF" className="logoSanf" />
+              <span>SENA - SANF</span>
             </div>
-            <div className="socialMedia">
-              <a href="https://web.facebook.com/groups/566675547810297/?_rdc=11&_rdr" target="_blank">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/senacomunica/?hl=es-la" target="_blank">
-                <i className="bi bi-instagram"></i>
-              </a>
-              <a href="https://twitter.com/SENAComunica" target="_blank"><i className="bi bi-twitter"></i></a>
-              <a href="https://co.linkedin.com/school/servicio-nacional-de-aprendizaje-sena-/" target="_blank">
-                <i className="bi bi-linkedin"></i>
-              </a>
+            <div className="createCount">
+              <h2>¿ No tienes una cuenta ?</h2>
+              <p>
+                Registrate para poder acceder a todos nuestros servicios, y administra y
+                visualiza los horarios en un solo lugar.
+              </p>
+              <div className="divBtn">
+                <Link to={'/user-register'}><button>Registrate !! <i className="bi bi-caret-right-fill"></i></button></Link>
+              </div>
+              <div className="socialMedia">
+                <a href="https://web.facebook.com/groups/566675547810297/?_rdc=11&_rdr" target="_blank">
+                  <i className="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/senacomunica/?hl=es-la" target="_blank">
+                  <i className="bi bi-instagram"></i>
+                </a>
+                <a href="https://twitter.com/SENAComunica" target="_blank"><i className="bi bi-twitter"></i></a>
+                <a href="https://co.linkedin.com/school/servicio-nacional-de-aprendizaje-sena-/" target="_blank">
+                  <i className="bi bi-linkedin"></i>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="loginForm" id="loginForm">
-          <div className="header">
-            <img src={senaLogo} alt="Logo-Sena" className="logoLogin" />
-            <h2>Inicio de Sesion</h2>
-          </div>
-          { called && loading ? (<h2>Loading ...</h2>) : (
-            <form id="formulario" onInput={handleInput} onFocus={handleFocusIn} 
-              onBlur={handleFocusOut} onSubmit={handleSubmitForm}>
-              <section className="form_group">
-                <label htmlFor="tipo" className="form_label_login">Tipo de Documento</label>
-                <div className="form_input" id="divSelect">
-                  <i className="bi bi-person-vcard-fill iconsLogin"></i>
-                  <select name="tipo" id="tipo" defaultValue={'CC'} required>
-                    <option value="CEDULA_DE_CIUDADANIA">Cédula de Ciudadania</option>
-                    <option value="TARJETA_DE_IDENTIDAD">Tarjeta de Identidad</option>
-                    <option value="CEDULA_DE_EXTRANJERIA">Cédula de Extranjeria</option>
-                    <option value="PEP">PEP</option> 
-                    <option value="PERMISO_DE_PROTECCION_TEMPORAL">Permiso Protección Temporal</option>
-                  </select>
-                </div>
-              </section>
-
-              <section className="form_group" id="group_numDoc">
-                <label htmlFor="numDoc" className="form_label_login">Número de Documento</label>
-                <div className="form_input" id="divNum">
-                  <i className="bi bi-person-circle iconsLogin"></i>
-                  <input
-                    type="text" id="numDoc" name="numDoc" autoComplete="off"
-                    placeholder="Ingrese El Número de Documento" required
-                  />
-                </div>
-                <p className="message_error">
-                  El Número No puede contener espacios ni caracteres especiales y debe contener minimo 8 caracteres
-                </p>
-              </section>
-
-              <section className="form_group" id="group_pass">
-                <label htmlFor="pass" className="form_label_login">Contraseña</label>
-                <div className="form_input" id="divPass">
-                  <i className="bi bi-lock-fill iconsLogin"></i>
-                  <input type="password" name="pass" id="pass" placeholder="Ingrese la Contraseña" required />
-                  <i className="bi bi-eye-fill iconEye" id="viewPass" 
-                    onMouseUp={viewPassEventUp} onMouseDown={viewPassEventDown}></i>
-                </div>
-                <p className="message_error">La Contraseña debe tener minimo 8 caracteres</p>
-              </section>
-
-              <section className="message_error" id="form_error">
-                <p>
-                  <i className="bi bi-exclamation-diamond-fill iconsLogin"></i>
-                  <b>Error: </b> Información de Usuario Invalida
-                </p>
-              </section>
-
-              <section className="forget_pass">
-                <button type='button' onClick={() => document.querySelector('.modal').classList.add('modal_show')}>
-                  <i className="bi bi-key-fill"></i> Olvidé mi Contraseña
-                </button>
-              </section>
-
-              <section className="form_btn">
-                <button type="submit" className="btn_submit">
-                  Ingresar !! <i className="bi bi-caret-right-fill"></i>
-                </button>
-              </section>
-            </form>
-          ) }
-        </div>
-      </section>
-
-      <section className="modal">
-        <div className="contain_modal">
-          <article className="head_modal">
-            <div className="modal_title">
-              <i className="bi bi-key-fill"></i>
-              <h2>Restablecer la Contraseña</h2>
+          <div className="loginForm" id="loginForm">
+            <div className="header">
+              <img src={senaLogo} alt="Logo-Sena" className="logoLogin" />
+              <h2>Inicio de Sesion</h2>
             </div>
-            <button className="modal_close" onClick={closeModal}>
-              <i className="bi bi-x-lg"></i>
-            </button>
-          </article>
-          <article className="body_modal">
-            <p>Seleccione y escriba, el tipo y el número de su documento de Identidad</p>
-            <form action="" id="form_get_pass" onInput={handleInput} onFocus={handleFocusIn} 
-              onBlur={handleFocusOut} onSubmit={handleSubmitForm}>
-              <section id="group_type_doc">
-                <label htmlFor="type_doc" className="form_label_login label_rec">Tipo de Documento de Identidad</label>
-                <div className="form_input" id="select_tipe">
-                  <i className="bi bi-person-vcard-fill iconsLogin"></i>
-                  <select name="type_doc" defaultValue={''} id="type_doc" required>
-                    <option value="" disabled>Seleccionar . . .</option>
-                    <option value="CC">Cédula de Ciudadania</option>
-                    <option value="TI">Tarjeta de Identidad</option>
-                    <option value="CE">Cédula de Extranjeria</option>
-                    <option value="PEP">PEP</option>
-                    <option value="PPT">Permiso Protección Temporal</option>
-                  </select>
-                </div>
-              </section>
+            {called && loading ? (<h2>Loading ...</h2>) : (
+              <form id="formulario" onInput={handleInput} onFocus={handleFocusIn}
+                onBlur={handleFocusOut} onSubmit={handleSubmitForm}>
+                <section className="form_group">
+                  <label htmlFor="tipo" className="form_label_login">Tipo de Documento</label>
+                  <div className="form_input" id="divSelect">
+                    <i className="bi bi-person-vcard-fill iconsLogin"></i>
+                    <select name="tipo" id="tipo" defaultValue={'CC'} required>
+                      <option value="CEDULA_DE_CIUDADANIA">Cédula de Ciudadania</option>
+                      <option value="TARJETA_DE_IDENTIDAD">Tarjeta de Identidad</option>
+                      <option value="CEDULA_DE_EXTRANJERIA">Cédula de Extranjeria</option>
+                      <option value="PEP">PEP</option>
+                      <option value="PERMISO_DE_PROTECCION_TEMPORAL">Permiso Protección Temporal</option>
+                    </select>
+                  </div>
+                </section>
 
-              <section id="group_numDocRec">
-                <label htmlFor="numDocRec" className="form_label_login label_rec">Número de Documento</label>
-                <div className="form_input" id="input_doc">
-                  <i className="bi bi-person-circle iconsLogin"></i>
-                  <input
-                    type="text" name="numDocRec" id="numDocRec" autoComplete="off"
-                    placeholder="Ingrese El Número de Documento" required
-                  />
-                </div>
-                <p className="message_error">
-                  El Número No puede contener espacios ni caracteres especiales y debe contener minimo 8 caracteres
-                </p>
-              </section>
+                <section className="form_group" id="group_numDoc">
+                  <label htmlFor="numDoc" className="form_label_login">Número de Documento</label>
+                  <div className="form_input" id="divNum">
+                    <i className="bi bi-person-circle iconsLogin"></i>
+                    <input
+                      type="text" id="numDoc" name="numDoc" autoComplete="off"
+                      placeholder="Ingrese El Número de Documento" required
+                    />
+                  </div>
+                  <p className="message_error">
+                    El Número No puede contener espacios ni caracteres especiales y debe contener minimo 8 caracteres
+                  </p>
+                </section>
 
-              <section className="message_error" id="form_error_rec">
-                <p>
-                  <i className="bi bi-exclamation-diamond-fill iconsLogin"></i>
-                  <b>Error : </b> Información Ingresada No Invalida
-                </p>
-              </section>
+                <section className="form_group" id="group_pass">
+                  <label htmlFor="pass" className="form_label_login">Contraseña</label>
+                  <div className="form_input" id="divPass">
+                    <i className="bi bi-lock-fill iconsLogin"></i>
+                    <input type="password" name="pass" id="pass" placeholder="Ingrese la Contraseña" required />
+                    <i className="bi bi-eye-fill iconEye" id="viewPass"
+                      onMouseUp={viewPassEventUp} onMouseDown={viewPassEventDown}></i>
+                  </div>
+                  <p className="message_error">La Contraseña debe tener mínimo 8 caracteres</p>
+                </section>
 
-              <article className="footer_modal">
-                <button type="button" className="btn_submit" onClick={closeModal}>
-                  Cancelar !! &nbsp;
-                </button>
-                <button type="submit" name="res_pass" className="btn_submit">
-                  Enviar !! &nbsp;
-                </button>
-              </article>
-            </form>
-          </article>
-        </div>
+                <section className="message_error" id="form_error">
+                  <p>
+                    <i className="bi bi-exclamation-diamond-fill iconsLogin"></i>
+                    <b>Error: </b> Información de Usuario No Válida.
+                  </p>
+                </section>
+
+                <section className="forget_pass">
+                  <button type='button' onClick={() => document.querySelector('.modal').classList.add('modal_show')}>
+                    <i className="bi bi-key-fill"></i> Olvidé mi Contraseña
+                  </button>
+                </section>
+
+                <section className="form_btn">
+                  <button type="submit" className="btn_submit">
+                    Ingresar !! <i className="bi bi-caret-right-fill"></i>
+                  </button>
+                </section>
+              </form>
+            )}
+          </div>
+        </section>
+
+        <section className="modal">
+          <div className="contain_modal">
+            <article className="head_modal">
+              <div className="modal_title">
+                <i className="bi bi-key-fill"></i>
+                <h2>Restablecer la Contraseña</h2>
+              </div>
+              <button className="modal_close" onClick={closeModal}>
+                <i className="bi bi-x-lg"></i>
+              </button>
+            </article>
+            <article className="body_modal">
+              <p>Seleccione y escriba, el tipo y el número de su documento de Identidad</p>
+              <form action="" id="form_get_pass" onInput={handleInput} onFocus={handleFocusIn}
+                onBlur={handleFocusOut} onSubmit={handleSubmitForm}>
+                <section id="group_type_doc">
+                  <label htmlFor="type_doc" className="form_label_login label_rec">Tipo de Documento de Identidad</label>
+                  <div className="form_input" id="select_tipe">
+                    <i className="bi bi-person-vcard-fill iconsLogin"></i>
+                    <select name="type_doc" defaultValue={''} id="type_doc" required>
+                      <option value="" disabled>Seleccionar . . .</option>
+                      <option value="CC">Cédula de Ciudadania</option>
+                      <option value="TI">Tarjeta de Identidad</option>
+                      <option value="CE">Cédula de Extranjeria</option>
+                      <option value="PEP">PEP</option>
+                      <option value="PPT">Permiso Protección Temporal</option>
+                    </select>
+                  </div>
+                </section>
+
+                <section id="group_numDocRec">
+                  <label htmlFor="numDocRec" className="form_label_login label_rec">Número de Documento</label>
+                  <div className="form_input" id="input_doc">
+                    <i className="bi bi-person-circle iconsLogin"></i>
+                    <input
+                      type="text" name="numDocRec" id="numDocRec" autoComplete="off"
+                      placeholder="Ingrese El Número de Documento" required
+                    />
+                  </div>
+                  <p className="message_error">
+                    El Número No puede contener espacios ni caracteres especiales y debe contener mínimo 8 caracteres
+                  </p>
+                </section>
+
+                <section className="message_error" id="form_error_rec">
+                  <p>
+                    <i className="bi bi-exclamation-diamond-fill iconsLogin"></i>
+                    <b>Error : </b> Información Ingresada No Invalida
+                  </p>
+                </section>
+
+                <article className="footer_modal">
+                  <button type="button" className="btn_submit" onClick={closeModal}>
+                    Cancelar !! &nbsp;
+                  </button>
+                  <button type="submit" name="res_pass" className="btn_submit">
+                    Enviar !! &nbsp;
+                  </button>
+                </article>
+              </form>
+            </article>
+          </div>
+        </section>
       </section>
     </div>
   )

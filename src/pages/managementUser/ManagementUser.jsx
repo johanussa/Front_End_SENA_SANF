@@ -211,9 +211,7 @@ function ManagementUser() {
           <p id="data_not_found">No se Encontraron coincidencias</p>
         </main>
       </section>
-      <section className='section_foot_users'>
-        <Footer />
-      </section>
+      <section className='section_foot_users'><Footer /></section>
     </section>
   )
 }

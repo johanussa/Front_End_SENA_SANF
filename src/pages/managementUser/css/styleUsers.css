@@ -1,5 +1,5 @@
 .contain_user {
-    background-color: rgb(243, 255, 240);
+    background-color: rgb(204, 255, 216);
     min-height: 100vh;
     min-width: 390px;
     margin-left: 88px;
@@ -59,12 +59,13 @@ main.table_main table {
     min-width: 950px;
     margin: 0 auto;
 }
-table tbody tr:nth-child(even) { background-color: rgb(177, 221, 176); }
-table tbody tr:nth-child(odd) { background-color: rgb(201, 233, 200); }
-table tbody tr:hover { background-color: rgb(224, 255, 223); }
+table tbody tr:nth-child(even) { background-color: rgb(153, 218, 152); }
+table tbody tr:nth-child(odd) { background-color: rgb(191, 235, 190); }
+table tbody tr:hover { background-color: rgb(221, 233, 221); }
 main.table_main table .table-success .header {
     height: 40px;
-    background-color: rgb(134, 189, 132);
+    color: #FFF;
+    background-color: rgb(19, 167, 5);
 }
 .table-success .header .posUser {
     font-size: 19px;
@@ -86,9 +87,11 @@ section.search_box {
     margin: 3px 5px;
     cursor: pointer;
     background: transparent;
+    transition: transform .3s;
 }
+.contain_btns .btnAction:hover { transform: scale(1.2); }
 .table-success .filter { cursor: pointer; user-select: none; }
-.table-success .filter:hover { background-color: rgb(118, 163, 141); }
+.table-success .filter:hover { background-color: rgb(0, 83, 17); }
 .filter.active_filter { background-color: rgb(135, 199, 151); }
 p#data_not_found { 
     opacity: 0; 
@@ -99,7 +102,6 @@ p#data_not_found.not_found{ opacity: 1; }
 button .iconAct { color: red; }
 button .iconCheck { color: rgb(13, 150, 20); }
 tr th i { margin-left: 6px; }
-
 section.section_foot_users main.contenedor-foot {
     width: calc(100% - 88px);
     margin: 5px 0 0 88px;    

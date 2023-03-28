@@ -9,7 +9,7 @@ main.contenedor_main {
     min-height: 90vh;
     display: grid;
     grid-template-columns: 2fr 5fr;
-    background: url('../../../assets/Fondo.jpg');
+    background: url('../../../assets/FondoSENA.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -19,6 +19,7 @@ main.contenedor_main {
 main.contenedor_main .fondo {
     text-align: center;
     position: relative;
+    background-color: rgba(0, 0, 0, .4);
 }
 section.fondo img.logoTitle {
     width: 40%;
@@ -57,7 +58,7 @@ header.head_title img#logoMedia {
 
 /* Contenedor de Formulario */
 
-section.formulario { background-color: rgba(0, 0, 0, .6); }
+section.formulario { background-color: rgba(0, 0, 0, .8); }
 form#form-register-user {
     height: 80%;
     padding: 45px;
@@ -141,7 +142,7 @@ section.group_btns .btn_send {
     border-radius: 25px;
     font-weight: 700;
     cursor: pointer;
-    background: linear-gradient(rgb(39, 190, 72), rgb(0, 0, 0));
+    background: linear-gradient(#119e1d, rgb(0, 0, 0));
     color: #fff;
     transition: box-shadow .3s ease;
 }

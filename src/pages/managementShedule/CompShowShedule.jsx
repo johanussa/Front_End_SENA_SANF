@@ -20,7 +20,7 @@ function CompShowShedule({ userSelected, sizeShed, setSizeShed, setTableTitle, c
     setTimeout(() => {      // Renderiza la pagina de Instructor
       let td = document.querySelectorAll('td');
       dataShedule.Horas.forEach(e => td[e.pos].classList.add(`color_${colors[e.color]}`));
-    }, 2);
+    }, 10);
 
     const formatDate = date => {
       if (!date) return;

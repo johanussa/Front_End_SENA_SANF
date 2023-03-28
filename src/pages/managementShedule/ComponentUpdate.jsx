@@ -53,7 +53,6 @@ function ComponentUpdate({ instructor, sizeShed, setEventActive, setColorSelecto
       }
     }
   }
-
   if (instructor && !instructor.Horario.length) {
     const nameUser = `${instructor.Instructor.Nombre} ${instructor.Instructor.Apellido}`
     return <h3>El Instructor {nameUser} Aun No tiene Horarios Asignados </h3>

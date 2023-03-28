@@ -205,7 +205,7 @@ function CompUpdateFicha({ user, setUser, instructor, posShedule }) {
                 <label htmlFor="Programa">Programa de Formación:</label>
                 {
                   respNames.data && (
-                    <select name="Select_Programa" defaultValue={e.Programa} id="Programa" onChange={e => changeData(e, pos)}>
+                    <select name="Select_Programa" defaultValue={ e.Programa } id="Programa" onChange={e => changeData(e, pos)}>
                       {showPrograms()}
                     </select>
                   )

@@ -22,7 +22,8 @@ function UserRegisterPage() {
 
   useEffect(() => {
     if (data) {
-      setToken(data.loginUser.token);
+      console.log(data)
+      setToken(data.registerUser.token);
       Swal.fire('Registrado!', `El Registro ha sido Exitoso`, 'success');
       navigate('/'); 
     }

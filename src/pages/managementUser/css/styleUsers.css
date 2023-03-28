@@ -1,6 +1,6 @@
 .contain_user {
     background-color: rgb(204, 255, 216);
-    min-height: 100vh;
+    min-height: 90vh;
     min-width: 390px;
     margin-left: 88px;
 }
@@ -104,7 +104,7 @@ button .iconCheck { color: rgb(13, 150, 20); }
 tr th i { margin-left: 6px; }
 section.section_foot_users main.contenedor-foot {
     width: calc(100% - 88px);
-    margin: 5px 0 0 88px;    
+    margin: 0 0 0 88px;    
 }
 
 /* Media Queries */

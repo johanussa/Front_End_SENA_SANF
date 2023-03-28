@@ -24,7 +24,7 @@ export const ComponentFormUp = ({ userData }) => {
   const expresiones = {
     numDocumento: /^([a-zA-Z]{4}|[0-9]){8,12}$/,
     email: /^\w+@(misena|soy\.sena)\.edu\.co$/,
-    pass: /^.{8,20}$/
+    passNew: /^.{8,20}$/
   }
   const closeModal = () => {
     document.querySelector('.modal').classList.remove('modal_show');
@@ -41,8 +41,8 @@ export const ComponentFormUp = ({ userData }) => {
       tipoDocumento: () => validateFields['tipoDocumento'] = valor,
       numDocumento: () => validarData('numDocumento', valor),
       email: () => validarData('email', valor),
-      pass: () => {
-        validarData('pass', valor);
+      passNew: () => {
+        validarData('passNew', valor);
         confirmPassword();
         if (e.target.value.length) passInput.current.setAttribute('required', true);
         else passInput.current.removeAttribute('required');
@@ -54,7 +54,7 @@ export const ComponentFormUp = ({ userData }) => {
   const validarData = (name, valor) => {
     if (expresiones[name].test(valor)) {
       applyChanges(name, true);
-      if (name !== 'pass') validateFields[name] = valor;
+      if (name !== 'passNew') validateFields[name] = valor;
     } else {
       applyChanges(name, false);
       delete validateFields[name];
@@ -70,7 +70,7 @@ export const ComponentFormUp = ({ userData }) => {
     }
   }
   const confirmPassword = () => {
-    let pass = document.getElementById('pass').value;
+    let pass = document.getElementById('passNew').value;
     let pass2 = document.getElementById('confirmPass').value;
 
     if (pass && pass2) {
@@ -143,11 +143,11 @@ export const ComponentFormUp = ({ userData }) => {
                 </p>
               </section>
 
-              <section id="group_pass">
-                <label htmlFor="pass" className='form_up_label'>Contraseña :</label>
+              <section id="group_passNew">
+                <label htmlFor="passNew" className='form_up_label'>Contraseña :</label>
                 <section className='form_section_up'>
                   <i className="bi bi-shield-lock-fill iconsLogin"></i>
-                  <input type="password" id="pass" autoComplete="off" placeholder="Ingrese Su Nueva Contraseña" />
+                  <input type="password" id="passNew" autoComplete="off" placeholder="Ingrese Su Nueva Contraseña" />
                 </section>
                 <p className="message_error">La Contraseña debe tener minimo 8 caracteres</p>
               </section>

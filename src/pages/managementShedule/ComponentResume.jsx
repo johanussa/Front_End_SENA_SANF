@@ -7,7 +7,7 @@ function ComponentResume({ user, sizeShed, click = false, setEventActive, setCol
   
   useEffect(() => {
     if (click) setDataUser(user);
-    else setDataUser(user.Horario[sizeShed]);
+    else if (user) setDataUser(user.Horario[sizeShed]);
   }, [sizeShed, user]);
   
   const changeShedule = (color, Ambiente = false) => {

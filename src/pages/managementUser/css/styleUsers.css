@@ -1,5 +1,6 @@
 .contain_user {
     background-color: rgb(243, 255, 240);
+    min-height: 100vh;
     min-width: 390px;
     margin-left: 88px;
 }

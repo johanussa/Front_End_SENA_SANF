@@ -1,6 +1,6 @@
 section.inst_container {
     width: calc(100vw - 105px);
-    min-height: 80vh;
+    min-height: 100vh;
     margin-left: 88px;
 }
 section.inst_container section.info_instructor {

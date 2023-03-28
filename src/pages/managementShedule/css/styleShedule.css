@@ -19,7 +19,7 @@
 }
 section.container { 
     width: calc(100% - 88px); 
-    min-height: 90vh;
+    min-height: 100vh;
     margin-left: 88px;
 }
 section.container .icons { font-size: 45px; }

@@ -7,8 +7,6 @@ main.contenedor-foot {
     min-width: 250px;
     background-color: var(--background-foot);
     color: var(--text-color-foot);
-    position: absolute;
-    bottom: calc(0);
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;

@@ -12,7 +12,8 @@ import { setContext } from '@apollo/client/link/context';
 import { useEffect, useState } from "react";
 import jwt_decode from 'jwt-decode';
 
-const httpLink = createHttpLink({ uri: 'https://sena-sanf-back.vercel.app/' });
+const httpLink = createHttpLink({ uri: 'http://localhost:3001' });
+// const httpLink = createHttpLink({ uri: 'https://sena-sanf-back.vercel.app/' });
 const authLink = setContext((_, { headers }) => {
   const token = JSON.parse(localStorage.getItem('authentication-user-token'));
   return {

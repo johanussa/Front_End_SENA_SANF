@@ -71,7 +71,7 @@ function ComponentForm({ btnsAction, form, setForm, setTableTitle, colorSelector
         e.target.value = '';
       },
       Ambiente: () => {
-        getAmbShedule({ variables: { fechaInicio: date.value, ambiente: `${e.target.value}.` } });   // ------ Remover el punto
+        getAmbShedule({ variables: { fechaInicio: date.value, ambiente: `${e.target.value}` } });   // ------ Remover el punto
         if (form?.Ambiente) changeAmbiente(e.target.value);
         else setForm(prev => ({ ...prev, [e.target.id]: e.target.value }));
       }

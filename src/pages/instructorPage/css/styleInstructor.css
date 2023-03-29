@@ -2,9 +2,13 @@ section.inst_container {
     width: calc(100vw - 105px);
     min-height: 100vh;
     margin-left: 88px;
+    background-color: #efffe6;
 }
 section.inst_container section.info_instructor {
     border-bottom: 1px solid #00000020;
+    background-image: url('../../../assets/Fondo_verde.jpg');
+    background-size: contain;
+    color: #FFF;
     height: 90px;
     display: flex;
     flex-direction: column;
@@ -21,38 +25,11 @@ section.inst_container h3 {
     text-align: center; 
     margin-bottom: 15px;
 }
-section.inst_container main.table_shedule table {
-    max-width: 1600px;
-    width: 100%;
-    margin: 0 auto;
-    height: 600px;
-    padding: 15px;
-}
-section.inst_container main.table_shedule table thead {
-    background-color: #2ca12c;
-    height: 35px;
-}
-section.inst_container main.table_shedule table th {
-    width: 250px;
-}
-section.dates_instructor {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 0 80px;
-    margin: 0 0 20px;
-    text-transform: capitalize;
-    display: flex;
-    justify-content: space-between;
-}
-section.dates_instructor i { font-size: 2rem; }
-section.dates_instructor i {
-    font-size: 2rem;
-    cursor: pointer;
-}
-section.dates_instructor i:hover { color: #00af00; }
 section.show_shedule.instructor_page { display: flex; }
-section.show_shedule.instructor_page h2 { grid-column: span 2; }
 section.section_instructor main.contenedor-foot {
     width: calc(100% - 88px);
     margin-left: 88px;
+}
+h1#name_instructor {
+    font-size: 2.2rem;
 }

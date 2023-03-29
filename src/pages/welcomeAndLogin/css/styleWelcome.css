@@ -97,6 +97,8 @@ section.background {
 }
 .form_correct #numDocRec { border: 2px solid #00af4f; }
 .head_modal {
+    background-color: var(--color-azul-oscuro);
+    color: #FFF;
     display: grid;
     grid-template-columns: 5fr 1fr;
     border-bottom: 1px solid #00000050;
@@ -121,6 +123,7 @@ section.background {
     margin: 15px; 
 }
 .head_modal button {
+    color: #FFF;
     background: transparent;
     border: none;
     cursor: pointer;

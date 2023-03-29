@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useRef, useState } from 'react';
 import { colors } from '../../components/data';
 import { confirmChanges } from './CompUpdateFicha';
-import senaLogo from '../../assets/Sena_logo.png';
+import senaLogo from '../../assets/Logo_Sena_White.png';
 import logoSANF from '../../assets/logoSANF2.png';
 import CompShowShedule from './CompShowShedule';
 import ComponentUpdate from './ComponentUpdate';
@@ -652,6 +652,7 @@ function ManagementShedule() {
                 <button className="save_data" onClick={btnContinue}>Continuar</button>
                 <button className="save_data" onClick={saveData}>Guardar</button>
               </section>
+              <br /><br />
             </section>
           </section>
         </main>

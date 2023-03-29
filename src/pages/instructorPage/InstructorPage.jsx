@@ -96,7 +96,7 @@ function InstructorPage({ userData }) {
           </section>
         </section>
 
-        <main className="table_shedule">
+        <section className="table_shedule">
           <h2 className="cantHoras">{ titleTable }</h2>
           <section className="resume"></section>
           <section className="show_table">
@@ -116,7 +116,8 @@ function InstructorPage({ userData }) {
               <tbody id="table_body" ref={bodyTable}></tbody>
             </table>
           </section>
-        </main>
+        </section>
+        <br /><br />
       </section>
       <section className="section_instructor"><Footer /></section>
     </>

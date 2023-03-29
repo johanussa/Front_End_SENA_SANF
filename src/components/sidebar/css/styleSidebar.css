@@ -214,6 +214,7 @@ span.hover_span {
 /* Estilos para Formulario Modal */
 
 form.form_update_data {
+    background-color: #00000030;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -247,8 +248,11 @@ section.section_btns_up {
     align-items: flex-end;
 }
 section.section_btns_up button {
+    background-color: var(--color-verde);
+    color: #FFF;
+    font-size: 15px;
     width: 120px;
-    height: 30px;
+    height: 32px;
     border-radius: 10px;
     font-weight: 600;
     border: 1px solid #00000090;
@@ -256,7 +260,7 @@ section.section_btns_up button {
     transition: all .2s;
 }
 section.section_btns_up button:hover {
-    background-color: #082e6b;
+    background-color: var(--color-azul-oscuro);
     color: #FFF;
     transform: scale(1.1);
 }

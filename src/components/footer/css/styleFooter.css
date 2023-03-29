@@ -6,6 +6,8 @@ main.contenedor-foot {
     width: 100%;
     min-width: 250px;
     background-color: var(--background-foot);
+    background-image: url('../../../assets/Fondo_verde.jpg');
+    background-size: contain;
     color: var(--text-color-foot);
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -79,7 +79,7 @@ function ComponentForm({ btnsAction, form, setForm, setTableTitle, colorSelector
     if (optionID[e.target.id]) optionID[e.target.id]();
     else setForm(prev => ({ ...prev, [e.target.id]: e.target.value }));
   }
-  const handleSubmit = e => {
+  const handleSubmit = e => { 
     e.preventDefault();
     document.querySelector('.btns_table').style.display = 'flex';
     document.querySelector('.table_shedule').style.display = 'grid';

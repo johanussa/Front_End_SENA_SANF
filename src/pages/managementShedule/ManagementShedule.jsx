@@ -107,6 +107,7 @@ function ManagementShedule() {
 
   useEffect(() => {
     if (resultsAddShedule.error) Swal.fire('Error!', `${resultsAddShedule.error.message}`, 'error');
+    if (resultsAddShedule.data) Swal.fire('Almacenado!', 'El Horario ha sido creado.', 'success');
     if (resultsUpShedule.error) Swal.fire('Error!', `${resultsUpShedule.error.message}`, 'error');
     if (resultsUpShedule.data) {
       Swal.fire('Almacenado!', 'Los cambios en el Horarios, han sido guardados.', 'success');

@@ -130,7 +130,7 @@ section.background {
     margin-left: 40px;
     font-size: 25px;
 }
-.head_modal button:hover { color: rgb(134, 134, 134); }
+.head_modal button:hover { color: rgb(0, 0, 0); }
 .footer_modal {
     display: flex;
     flex-flow: row wrap;
